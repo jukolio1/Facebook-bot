@@ -39,9 +39,27 @@ app.get('/webhook',(req,res)=> {
 });
 
 app.get('/', (req, res) => {
-    res.status(200).send('Hello bot ')
-    });
-
+    const htmlContent = `
+        <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Bot</title>
+        
+            <style>
+                body {
+                       font-family: Arial, Helvetica, sans-serif;
+                }
+            </style>
+        </head>
+        <body>
+           <h1>Faceboo-bot</h1>
+           <h3>Esta es la pagina principal de mi bot </h3>
+        </body>
+        </html>
+    `;
+    res.status(200).send(htmlContent);
+});
 app.listen(8080, () => {
     console.log('El servidor está escuchando en el puerto 8080');
 });
