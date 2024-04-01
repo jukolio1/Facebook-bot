@@ -3,6 +3,10 @@ const bodyParser = require('body-parser');
 
 const app = express().use(bodyParser.json());
 
+app.get('/', (req,res) => {
+res.send('Hello Word')
+});
+
 app.post('/webhook', (req,res) => {
     console.log('POST: webhook')
     const body = req.body;
