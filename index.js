@@ -3,9 +3,7 @@ const bodyParser = require('body-parser');
 
 const app = express().use(bodyParser.json());
 
-app.get('/', (req,res) => {
-res.send('Hello Word')
-});
+
 
 app.post('/webhook', (req,res) => {
     console.log('POST: webhook')
@@ -40,6 +38,9 @@ app.get('/webhook',(req,res)=> {
    }
 });
 
+app.get('/', (req, res) => {
+    res.status(200).send('Hello bot ')
+    });
 
 app.listen(3000, () => {
     console.log('El servidor está escuchando en el puerto 3000');
